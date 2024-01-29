@@ -1,0 +1,157 @@
+CREATE DATABASE DBSISTEMA_VENTA
+
+go 
+
+USE DBSISTEMA_VENTA
+
+go
+
+create table ROL (
+IdRol int primary key identity,
+Descripcion varchar (50) NOT NULL,
+FechaRegistro datetime default getdate()
+)
+
+go
+
+create table PERMISO (
+IdPermiso int primary key identity,
+IdRol int references ROL(IdRol),
+NombreMenu varchar (50) NOT NULL,
+FechaRegistro datetime default getdate()
+)
+
+go
+
+create table PROVEEDOR (
+IdProveedor int primary key identity,
+Documento varchar (50) NOT NULL,
+RazonSocial varchar (50) NOT NULL,
+Correo varchar (50) NOT NULL,
+Telefono varchar (50) NOT NULL,
+Estado bit NOT NULL,
+FechaRegistro datetime default getdate()
+)
+
+go
+ 
+create table CLIENTE (
+IdCliente int primary key identity, 
+Documento varchar (50) NOT NULL,
+NombreCompleto varchar (50) NOT NULL, 
+Correo varchar (50) NOT NULL, 
+Telefono varchar (50) NOT NULL, 
+Estado bit NOT NULL, 
+FechaRegistro datetime default getdate()
+)
+
+go
+
+create table USUARIO(
+IdUsuario int primary key identity,
+Documento varchar (50) NOT NULL,
+NombreCompleto varchar (50) NOT NULL, 
+Correo varchar (50) NOT NULL, 
+Clave varchar (50) NOT NULL, 
+IdRol int references ROL (IdRol),
+Estado bit NOT NULL, 
+FechaRegistro datetime default getdate()
+)
+
+go
+
+create table COMPRA (
+IdCompra int primary key identity, 
+IdUsuario int references USUARIO (IdUsuario),
+IdProveedor int references PROVEEDOR (IdProveedor),
+TipoDocumento varchar (50) NOT NULL,
+NumeroDocumento varchar (50) NOT NULL,
+MontoTotal decimal (10, 2) NOT NULL, 
+FechaRegistro datetime default getdate()
+)
+
+go 
+
+create table CATEGORIA(
+IdCategoria int primary key identity, 
+Descripcion varchar (50) NOT NULL, 
+Estado bit,
+FechaRegistro datetime default getdate()
+)
+
+go
+
+create table PRODUCTO (
+IdProducto int primary key identity, 
+Codigo varchar (50) NOT NULL,
+Nombre varchar (50) NOT NULL, 
+Descripcion varchar (50) NOT NULL, 
+IdCategoria int references CATEGORIA (IdCategoria),
+Stock int NOT NULL,
+PrecioCompra decimal (10, 2) NOT NULL,
+PrecioVenta decimal (10, 2) NOT NULL,
+Estado bit,
+FechaRegistro datetime default getdate()
+)
+
+go
+
+create table DETALLE_COMPRA(
+IdDetalleCompra int primary key identity,
+IdCompra int references COMPRA(IdCompra),
+IdProducto int references PRODUCTO (IdProducto),
+PrecioCompra decimal (10, 2) NOT NULL, 
+PrecioVenta decimal (10, 2) NOT NULL,
+Cantidad int NOT NULL, 
+Total decimal (10,2) NOT NULL,
+FechaRegistro datetime default getdate()
+)
+
+go 
+
+create table VENTA (
+Idventa int primary key identity, 
+IdUsuario int references USUARIO (IdUsuario),
+TipoDocumento varchar (50) NOT NULL,
+NumeroDocumento varchar (50) NOT NULL,
+DocumentoCliente varchar (50) NOT NULL,
+NombreCliente varchar (50) NOT NULL,
+MontoPago decimal (10,2) NOT NULL,
+MontoCambio decimal (10,2) NOT NULL,
+MontoTotal decimal (10,2) NOT NULL,
+FechaRegistro datetime default getdate()
+)
+
+go 
+
+create table DETALLE_VENTA(
+IdDetalleVenta int primary key identity,
+IdVenta int references VENTA(IdVenta),
+IdProducto int references PRODUCTO (IdProducto), 
+PrecioVenta decimal (10, 2) NOT NULL,
+Cantidad int NOT NULL, 
+SubTotal decimal (10,2) NOT NULL,
+FechaRegistro datetime default getdate()
+)
+
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
