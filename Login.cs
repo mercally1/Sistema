@@ -27,12 +27,12 @@ namespace CapaPresentacion
         private void btningresar_Click(object sender, EventArgs e)
 
         {
-            List<Usuario> TEST = new List<Usuario>();
-            Usuario ousuario = new CN_Usuario().Listar().Where(u => u.Documento== txtdocumento.Text && u.Clave == txtclave.Text).FirstOrDefault();
+            List<Usuario> TEST = new CN_Usuario().Listar();
+            Usuario ousuario = new CN_Usuario().Listar().Where(u => u.Documento == txtdocumento.Text && u.Clave == txtclave.Text).FirstOrDefault();
 
             if (ousuario != null)
             {
-                Inicio form = new Inicio();
+                Inicio form = new Inicio(ousuario);
                 form.Show();
                 this.Hide();
                 form.FormClosing += frm_closing;

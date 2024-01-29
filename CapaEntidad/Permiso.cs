@@ -11,6 +11,6 @@ namespace CapaEntidad
         public int iDPermiso { get; set; }
         public Rol oRol { get; set; }
         public string NombreMenu { get; set; }
-        public string FechaCreacion { get; set; }
+        public string FechaRegistro { get; set; }
     }
 }
