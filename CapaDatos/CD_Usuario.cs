@@ -15,7 +15,6 @@ namespace CapaDatos
 {
     public class CD_Usuario
     {
-
         public List<Usuario> Listar()
         {
             List<Usuario> Lista = new List<Usuario>();
@@ -34,7 +33,7 @@ namespace CapaDatos
                     {
                         while (dr.Read())
                         {
-                            Lista.Add(new Usuario
+                            Lista.Add(new Usuario()
                             {
                                 IdUsuario = Convert.ToInt32(dr["IdUsuario"]),
                                 Documento = dr["Documento"].ToString(),
@@ -49,12 +48,9 @@ namespace CapaDatos
                 catch (Exception ex)
                 {
                     Lista = new List<Usuario>();
-                }
-               
+                }              
             }   
             return Lista;
         }
-
-
     }
 }
