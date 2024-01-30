@@ -6,10 +6,6 @@ using System.Threading.Tasks;
 
 using System.Data;
 using System.Data.SqlClient;
-using CapaEntidad;
-using System.Xml.Linq;
-using System.Security.Claims;
-using System.IO;
 
 namespace CapaDatos
 {
