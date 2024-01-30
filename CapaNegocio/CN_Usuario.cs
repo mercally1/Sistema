@@ -17,6 +17,5 @@ namespace CapaNegocio
         {
             return objcd_usuario.Listar();
         }
-
     }
 }
