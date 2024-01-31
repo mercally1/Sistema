@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.menu = new System.Windows.Forms.MenuStrip();
-            this.menuusuario = new FontAwesome.Sharp.IconMenuItem();
+            this.menuusuarios = new FontAwesome.Sharp.IconMenuItem();
             this.menumantenedor = new FontAwesome.Sharp.IconMenuItem();
             this.menuventas = new FontAwesome.Sharp.IconMenuItem();
             this.menucompras = new FontAwesome.Sharp.IconMenuItem();
@@ -49,7 +49,7 @@
             // menu
             // 
             this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuusuario,
+            this.menuusuarios,
             this.menumantenedor,
             this.menuventas,
             this.menucompras,
@@ -63,18 +63,18 @@
             this.menu.TabIndex = 0;
             this.menu.Text = "menuStrip1";
             // 
-            // menuusuario
+            // menuusuarios
             // 
-            this.menuusuario.AutoSize = false;
-            this.menuusuario.IconChar = FontAwesome.Sharp.IconChar.UserGear;
-            this.menuusuario.IconColor = System.Drawing.Color.Black;
-            this.menuusuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.menuusuario.IconSize = 60;
-            this.menuusuario.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.menuusuario.Name = "menuusuario";
-            this.menuusuario.Size = new System.Drawing.Size(80, 80);
-            this.menuusuario.Text = "Usuarios";
-            this.menuusuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.menuusuarios.AutoSize = false;
+            this.menuusuarios.IconChar = FontAwesome.Sharp.IconChar.UserGear;
+            this.menuusuarios.IconColor = System.Drawing.Color.Black;
+            this.menuusuarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.menuusuarios.IconSize = 60;
+            this.menuusuarios.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.menuusuarios.Name = "menuusuarios";
+            this.menuusuarios.Size = new System.Drawing.Size(80, 80);
+            this.menuusuarios.Text = "Usuarios";
+            this.menuusuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // menumantenedor
             // 
@@ -224,7 +224,7 @@
             this.lblusuario.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.lblusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblusuario.ForeColor = System.Drawing.Color.White;
-            this.lblusuario.Location = new System.Drawing.Point(806, 29);
+            this.lblusuario.Location = new System.Drawing.Point(799, 30);
             this.lblusuario.Name = "lblusuario";
             this.lblusuario.Size = new System.Drawing.Size(69, 17);
             this.lblusuario.TabIndex = 6;
@@ -260,7 +260,7 @@
         private System.Windows.Forms.MenuStrip menutitulo;
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconMenuItem menuacercade;
-        private FontAwesome.Sharp.IconMenuItem menuusuario;
+        private FontAwesome.Sharp.IconMenuItem menuusuarios;
         private FontAwesome.Sharp.IconMenuItem menumantenedor;
         private FontAwesome.Sharp.IconMenuItem menuventas;
         private FontAwesome.Sharp.IconMenuItem menucompras;
