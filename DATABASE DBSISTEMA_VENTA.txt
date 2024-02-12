@@ -133,25 +133,5 @@ Cantidad int NOT NULL,
 SubTotal decimal (10,2) NOT NULL,
 FechaRegistro datetime default getdate()
 )
-
-
-
-
- 
-
- 
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
+todo en la vida me parecido en lo mas emocionnate y apacionante desde lo mas grande hasta lo menos i
 
