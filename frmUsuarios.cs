@@ -29,6 +29,7 @@ namespace CapaPresentacion
             cboestado.SelectedIndex = 0;
 
             List<Rol> listaRol = new CN_Rol().Listar();
+             
             foreach (Rol item in listaRol)
             {
                 cborol.Items.Add(new OpcionCombo() { Valor = item.IdRol, Texto = item.Descripcion });
@@ -37,9 +38,17 @@ namespace CapaPresentacion
             cborol.ValueMember = "Texto";
             cborol.ValueMember = "Valor";
             cborol.SelectedIndex = 0;
-
         }
 
-       
+       private void btnguardar_Click(object sender, EventArgs e)
+        {
+            dgvdata.Rows.Add(new object[] {"",txtid.Text,txtdocumento.Text,txtnombrecompleto.Text,txtcorreo.Text,txtclave.Text,
+                ((OpcionCombo)cborol.SelectedItem).Valor.ToString(),
+                ((OpcionCombo)cborol.SelectedItem).Texto.ToString(),
+                 ((OpcionCombo)cboestado.SelectedItem).Valor.ToString(),
+                ((OpcionCombo)cboestado.SelectedItem).Texto.ToString()
+            });
+        }
+
     }
 }

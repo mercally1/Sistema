@@ -53,10 +53,11 @@ namespace CapaPresentacion
 
             contenedor.Controls.Add( formulario );
             formulario.Show();
-
-
-
         }
 
+        private void menuusuarios_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)sender, new frmUsuarios());
+        }
     }
 }
